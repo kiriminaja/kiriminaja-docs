@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@docsearch/js": "3",
+    "caniuse-lite": "^1.0.30001547",
     "nuxt-windicss": "^2.6.1"
   }
 }
