@@ -1,0 +1,20 @@
+<template>
+  <div class="w-full md:w-[6rem] py-4 fixed gap-3 md:top-0 md:left-0 bottom-0 bg-surfaceContainerLow">
+    <div class="md:flex h-full md:flex-col">
+      <div class="flex flex-row lg:block">
+        <NavigationButton icon="note" :fixed="true" label="Help" to="/" :exclude-url="[
+        '/docs',
+    ]"
+        />
+        <NavigationButton icon="compass" label="Develop" to="/docs"/>
+        <NavigationButton icon="academy" label="Akademi" to="https://youtube.com"/>
+      </div>
+      <div class="md:mt-auto text-center hidden lg:inline-block">
+        <IconDarkMode/>
+      </div>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+import DarkMode from "./Icon/DarkMode.vue";
+</script>

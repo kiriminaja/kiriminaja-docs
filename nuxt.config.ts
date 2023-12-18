@@ -1,21 +1,32 @@
 export default defineNuxtConfig({
-    extends: '@nuxt-themes/docus',
-    modules: [
-        'nuxt-windicss',
-    ],
+    devtools: {
+        enabled: true
+    },
     runtimeConfig: {
-        public: {
-            algolia: {
-                // @ts-ignore
-                applicationId: process.env.ALGOLIA_APP_ID ?? '',
-                // @ts-ignore
-                apiKey: process.env.ALGOLIA_APP_KEY ?? '',
-                langAttribute: 'lang',
-                docSearch: {
-                    // @ts-ignore
-                    indexName: process.env.ALGOLIA_INDEX_NAME ?? ''
-                }
-            }
-        }
+        ctfToken: process.env.CTF_TOKEN || ''
+    },
+    modules: [
+        '@nuxtjs/tailwindcss',
+        '@nuxt/content',
+        '@nuxtjs/color-mode',
+        'nuxt-anchorscroll',
+    ],
+    anchorscroll: {
+        hooks: [
+            // Or any valid hook if needed
+            // Default is `page:finish`
+            'page:transition:finish',
+        ],
+    },
+    css: [
+        '~/assets/main.css'
+    ],
+    colorMode: {
+        classSuffix: '',
+    },
+    content: {
+        highlight: {
+            theme: 'dracula'
+        },
     }
 })
