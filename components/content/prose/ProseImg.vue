@@ -1,7 +1,7 @@
 <template>
   <div class="text-center not-prose w-full py-3 md:py-5 relative">
     <img
-        class="inline-block max-w-[25rem] rounded-xl shadow-md"
+        class="inline-block max-w-[90vw] md:max-w-[25rem] rounded-xl shadow-md"
         :src="refinedSrc"
         :alt="alt"
         :width="width"
