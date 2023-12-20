@@ -1,10 +1,10 @@
 <template>
   <section>
-    <div class="container px-4 md:w-11/12 mx-auto">
+    <SectionContainer>
       <SectionHero title="Buku lengkap Solusi Pengirimanmu!"
                    description="Beragam artikel pengetahuan umum lengkap untuk membantu Anda memahami dan menyelesaikan pengiriman bersama KiriminAja dengan gampang."
       />
-      <div class="grid md:grid-cols-3 gap-5">
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
         <div class="bg-surface relative group hover:ring-4 hover:ring-primary p-5 items-start flex gap-4 rounded-3xl transition-all"
              v-for="(category, key) in data.items" :key="`cat-${key}`"
         >
@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </SectionContainer>
   </section>
 </template>
 <script setup lang="ts">

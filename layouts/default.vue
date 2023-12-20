@@ -1,9 +1,6 @@
 <template>
-  <NuxtLoadingIndicator/>
-  <div class="md:ml-[6rem] pb-36 md:pb-7">
-    <Navbar/>
-    <Sidebar/>
-    <slot/>
-  </div>
+  <LayoutBase><slot/></LayoutBase>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LayoutBase from "../components/Section/LayoutBase.vue";
+</script>

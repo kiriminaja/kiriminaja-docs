@@ -20,8 +20,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import {ProseH1} from "../content/prose/ProseH1.vue";
-
 defineProps<{
   article: object,
   parent: string

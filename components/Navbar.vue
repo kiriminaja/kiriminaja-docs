@@ -1,6 +1,6 @@
 <template>
   <nav class="py-3 md:py-4 z-[100] sticky top-0 backdrop-blur-2xl bg-background">
-    <div class="container relative px-4 md:w-11/12 mx-auto">
+    <SectionContainer>
       <div class="flex gap-5 items-center">
         <div class="col-auto md:mr-10">
           <div class="relative">
@@ -22,7 +22,7 @@
           </NuxtLink>
         </div>
       </div>
-    </div>
+    </SectionContainer>
   </nav>
 </template>
 <script setup lang="ts">

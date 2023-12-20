@@ -12,7 +12,9 @@
 </template>
 <script setup lang="ts">
 defineProps<{
-  title: string,
+  title: {
+    type: String
+  },
   description: string
 }>()
 </script>

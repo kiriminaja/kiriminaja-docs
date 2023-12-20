@@ -8,7 +8,7 @@
     <div class="prose prose-primary md:order-1 md:col-span-7 my-4 dark:prose-invert max-w-none">
       <div class="text-primary mb-3 font-medium" v-text="parent || 'Knowledge Center'"></div>
       <div class="mb-3">
-        <ProseH1 v-text="title"/>
+        <TitleBar :title="title"/>
         <p v-text="description"></p>
       </div>
       <slot/>
@@ -17,6 +17,7 @@
 </template>
 <script setup lang="ts">
 import {ProseH1} from "../content/prose/ProseH1.vue";
+import TitleBar from "./TitleBar.vue";
 
 defineProps<{
   title: string,
