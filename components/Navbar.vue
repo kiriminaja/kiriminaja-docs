@@ -1,5 +1,5 @@
 <template>
-  <nav class="py-4 z-99 sticky top-0 backdrop-blur-2xl bg-background">
+  <nav class="py-4 z-[100] sticky top-0 backdrop-blur-2xl bg-background">
     <div class="container relative px-4 md:w-11/12 mx-auto">
       <div class="flex gap-5 items-center">
         <div class="col-auto md:mr-10">

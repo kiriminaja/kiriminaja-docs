@@ -1,7 +1,7 @@
 <template>
   <div class="md:grow md:grid md:grid-cols-10 gap-10">
     <div class="md:order-2 md:col-span-3">
-      <div class="px-8 text-sm sticky top-28">
+      <div class="md:px-8 text-sm md:sticky md:top-28">
         <div v-if="article.hasOwnProperty('endpoint')">
           <h3 class="font-semibold mb-4 leading-6">Endpoint</h3>
           <div class="bg-surface ring-2 ring-success p-3 w-full rounded-xl text-success" v-text="article.endpoint"
