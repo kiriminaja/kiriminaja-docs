@@ -10,9 +10,7 @@
       <div class="px-8 text-sm sticky top-28">
         <div v-if="article.hasOwnProperty('endpoint')">
           <h3 class="font-semibold mb-4 leading-6">Endpoint</h3>
-          <div class="bg-surface ring-2 ring-success p-3 w-full rounded-xl text-success">
-            /api/mitra/v2/request_pickup
-          </div>
+          <div class="bg-surface ring-2 ring-success p-3 w-full rounded-xl text-success" v-text="article.endpoint"></div>
           <hr class="my-3 border-dashed border-outlineVariant">
         </div>
         <SectionToc :article="article"/>
