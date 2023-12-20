@@ -24,11 +24,11 @@ export default defineNuxtConfig({
         '~/assets/main.css'
     ],
     algolia: {
-        apiKey: 'apiKey',
-        applicationId: 'applicationId',
+        apiKey: process.env.ALGOLIA_APP_KEY || '',
+        applicationId: process.env.ALGOLIA_APP_ID || '',
         // DocSearch key is used to configure DocSearch extension.
         docSearch: {
-            indexName: 'indexName',
+            indexName: process.env.ALGOLIA_INDEX_NAME || '',
         }
     },
     colorMode: {

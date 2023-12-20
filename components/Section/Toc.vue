@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <div v-if="article.body.hasOwnProperty('toc')">
+    <div v-if="article.body.hasOwnProperty('toc') && article.body.toc.links.length > 0">
       <h3 class="font-semibold mb-4 leading-6">Akses Cepat</h3>
       <ul class="grid gap-3">
         <li :class="[
