@@ -6,10 +6,10 @@
         <h1 id="province" class="not-prose mb-3 text-xl md:text-5xl font-semibold" v-text="category.title"></h1>
         <p v-text="category.description"></p>
       </div>
-      <div class="grid">
-        <div v-for="(article, key) in category.articles" :key="`key-${key}`" class="relative flex py-2 md:py-4 border-b border-dashed hover:border-solid hover:text-primary border-b-outlineVariant">
+      <div class="grid gap-2">
+        <div v-for="(article, key) in category.articles" :key="`key-${key}`" class="relative bg-surfaceContainerLow px-5 rounded-lg first:rounded-t-3xl last:rounded-b-3xl lg:flex py-3 md:py-4 hover:text-primary border-b-outlineVariant">
           <h3 class="text-lg font-medium md:text-xl not-prose grow" v-text="article.fields.title"></h3>
-          <span class="text-primary shrink-0 font-medium">Baca Artikel</span>
+          <span class="text-primary shrink-0 font-medium">Selengkapnya</span>
           <NuxtLink :to="`/article/${article.fields.slug}`" class="inset-0 absolute"/>
         </div>
       </div>

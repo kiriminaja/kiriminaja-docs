@@ -10,6 +10,7 @@
     ]"
         />
         <NavigationButton icon="compass" label="Code" to="/docs"/>
+        <NavigationButton icon="instagram" label="Instagram" target="_blank" to="https://instagram.com/kiriminaja_official"/>
         <NavigationButton icon="academy" label="Youtube" target="_blank" to="https://www.youtube.com/kiriminaja"/>
       </div>
       <div class="md:mt-auto text-center hidden lg:inline-block">

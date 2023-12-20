@@ -24,7 +24,7 @@ const prop = defineProps<{
   label: string,
   to: string,
   target?: string,
-  icon: 'academy' | 'note' | 'compass',
+  icon: 'academy' | 'note' | 'compass' | 'instagram',
   excludeUrl?: string[],
   activeWhen?: string[]
 }>()
