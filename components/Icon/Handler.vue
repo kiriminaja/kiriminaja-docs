@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import Account from "./Account.vue";
+
 defineProps<{
-  icon: 'academy' | 'compass' | 'note' | 'instagram',
+  icon: 'academy' | 'compass' | 'note' | 'instagram' | 'account',
   isActive?: boolean
 }>()
 </script>
@@ -10,6 +12,7 @@ defineProps<{
   <IconCompass :in-active="isActive" v-else-if="icon == 'compass'"/>
   <IconNote :in-active="isActive" v-else-if="icon == 'note'"/>
   <IconInstagram :in-active="isActive" v-else-if="icon == 'instagram'"/>
+  <Account v-else-if="icon == 'acount'"/>
 </template>
 
 <style scoped>

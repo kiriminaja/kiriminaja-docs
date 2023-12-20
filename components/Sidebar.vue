@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full z-[999] md:w-[6rem] py-4 fixed bottom-0 gap-3 md:top-0 md:left-0 bg-surfaceContainerLow">
+  <div class="w-full z-[999] md:w-[6rem] py-4 fixed bottom-0 gap-2 md:gap-3 md:top-0 md:left-0 bg-surfaceContainerLow">
     <div class="md:flex h-full md:flex-col">
       <div class="flex flex-row lg:block">
         <NavigationButton icon="note" :active-when="[
@@ -10,8 +10,8 @@
     ]"
         />
         <NavigationButton icon="compass" label="Code" to="/docs"/>
-        <NavigationButton icon="instagram" label="Instagram" target="_blank" to="https://instagram.com/kiriminaja_official"/>
         <NavigationButton icon="academy" label="Youtube" target="_blank" to="https://www.youtube.com/kiriminaja"/>
+        <NavigationButton icon="instagram" label="Akun" target="_blank" to="https://dashboard.kiriminaja.com"/>
       </div>
       <div class="md:mt-auto text-center hidden lg:inline-block">
         <IconDarkMode/>
@@ -19,6 +19,3 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-import DarkMode from "./Icon/DarkMode.vue";
-</script>

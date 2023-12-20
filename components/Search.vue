@@ -20,7 +20,7 @@
               stroke-linejoin="round"
           ></path>
         </svg>
-        <input @input="showMenu = true" v-model="input" :placeholder="isDocs ? 'Cari tahu tentang suatu API' : 'Temukan artikel yang kamu cari'"
+        <input @input="showMenu = true" v-model="input" :placeholder="'Cari artikel yang kamu cari'"
                type="search"
                class="placeholder-onSurfaceVariant bg-transparent rounded-full outline-none w-full py-3 pl-10 pr-4"
         >
