@@ -1,17 +1,17 @@
 <template>
   <div class="grow grid md:grid-cols-10 gap-10">
-    <div class="prose prose-primary md:col-span-7 my-4 dark:prose-invert max-w-none">
+    <div class="md:col-span-3 md:order-2">
+      <div class="px-8 text-sm md:sticky md:top-48">
+        <slot name="toc"/>
+      </div>
+    </div>
+    <div class="prose prose-primary md:order-1 md:col-span-7 my-4 dark:prose-invert max-w-none">
       <div class="text-primary mb-3 font-medium" v-text="parent || 'Knowledge Center'"></div>
       <div class="mb-3">
         <h1 class="not-prose mb-3 text-xl md:text-5xl font-semibold" v-text="title"></h1>
         <p v-text="description"></p>
       </div>
       <slot/>
-    </div>
-    <div class="md:col-span-3">
-      <div class="px-8 text-sm sticky top-28">
-        <slot name="toc"/>
-      </div>
     </div>
   </div>
 </template>

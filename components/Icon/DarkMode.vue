@@ -12,7 +12,7 @@ const switchColor = () => {
 </script>
 
 <template>
-  <div class="lg:w-[3.5rem] inline-block relative hover:bg-surfaceVariant aspect-square overflow-hidden rounded-full">
+  <div class="lg:w-[3.5rem] inline-block relative outline outline-outlineVariant hover:bg-surfaceVariant aspect-square overflow-hidden rounded-full">
     <div :class="[
         'transition-all',
         colorMode.preference === 'system' ? '-translate-y-2/3' : (colorMode.preference  === 'dark' ? '-translate-y-1/3' : 'translate-y-0')

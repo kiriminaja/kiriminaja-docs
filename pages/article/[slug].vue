@@ -1,5 +1,12 @@
 <template>
   <EntryDocs :title="article.fields.title" :description="article.fields.description" :parent="'Knowledge Center'">
+    <div class="aspect-video rounded-lg overflow-hidden mb-5" v-if="ytLink">
+      <iframe width="100%" height="100%" :src="`https://www.youtube.com/embed/${ytLink}`"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+      ></iframe>
+    </div>
     <ContentRendererMarkdown :value="mdResult"/>
     <template #toc>
       <Toc :article="mdResult"/>
@@ -25,7 +32,15 @@ if (typeof article.value === 'undefined' || article.value === null) {
 }
 
 const mdResult = await parseMarkdown(article.value.fields.content)
+const ytLink = ref(null)
+if (article.value.fields.ytLink) {
+  const url = new URL(article.value.fields.ytLink)
+  ytLink.value = url.searchParams.get('v')
 
+  if (article.value.fields.ytLink.includes('youtu.be')) {
+    ytLink.value = article.value.fields.ytLink.replace('https://youtu.be/','')
+  }
+}
 useHead({
   title: article.value.fields.title
 })

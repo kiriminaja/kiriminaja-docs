@@ -6,6 +6,7 @@ export default defineNuxtConfig({
         ctfToken: process.env.CTF_TOKEN || ''
     },
     modules: [
+        '@nuxtjs/algolia',
         '@nuxtjs/tailwindcss',
         '@nuxt/content',
         '@nuxtjs/color-mode',
@@ -22,6 +23,14 @@ export default defineNuxtConfig({
     css: [
         '~/assets/main.css'
     ],
+    algolia: {
+        apiKey: 'apiKey',
+        applicationId: 'applicationId',
+        // DocSearch key is used to configure DocSearch extension.
+        docSearch: {
+            indexName: 'indexName',
+        }
+    },
     colorMode: {
         classSuffix: '',
     },

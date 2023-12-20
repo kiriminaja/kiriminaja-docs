@@ -4,11 +4,13 @@
       <span :class="[
           'absolute top-0 left-1/2 -translate-x-1/2 w-full transition-all rounded-full bottom-0',
           (isActive ? 'bg-secondaryContainer w-full' : 'w-0 group-hover:w-full group-hover:bg-surfaceVariant')
-      ]"></span>
+      ]"
+      ></span>
       <div :class="[
           'relative',
           (isActive ? 'text-onSecondaryContainer' : '')
-      ]">
+      ]"
+      >
         <IconHandler :icon="icon" :is-active="isActive"></IconHandler>
       </div>
     </div>
@@ -23,13 +25,23 @@ const prop = defineProps<{
   to: string,
   target?: string,
   icon: 'academy' | 'note' | 'compass',
-  excludeUrl?: string[]
+  excludeUrl?: string[],
+  activeWhen?: string[]
 }>()
 
 const route = useRoute()
 
 const isActive = computed(() => {
-  return prop.fixed ? (route.fullPath === prop.to) : route.fullPath.startsWith(prop.to)
+  let active = prop.fixed ? (route.fullPath === prop.to) : route.fullPath.startsWith(prop.to)
+  if (prop.activeWhen) {
+    prop.activeWhen.forEach((path) => {
+      if (route.fullPath.includes(path)) {
+        active = true
+      }
+    })
+  }
+  return active;
+
 })
 
 </script>

@@ -5,10 +5,8 @@
     <Sidebar/>
     <section>
       <div class="container px-4 md:w-11/12 mx-auto">
-        <div class="flex gap-10">
-          <EntryCategory/>
-          <slot/>
-        </div>
+        <EntryCategory/>
+        <slot/>
       </div>
     </section>
   </div>

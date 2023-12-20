@@ -133,3 +133,17 @@ alert strong {
 alert p {
     margin: 0 !important;
 }
+
+#docsearch {
+    --docsearch-text-color: var(--flux-onSurface);
+    --docsearch-muted-color: var(--flux-onSurfaceVariant);
+    --docsearch-searchbox-background: var(--flux-surfaceContainer)!important;
+}
+
+.DocSearch-Button {
+    margin: 0!important;
+    width: 100%;
+    height: auto!important;
+    padding: 0.75rem 1rem!important;
+}
+
