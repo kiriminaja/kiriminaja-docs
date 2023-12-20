@@ -13,5 +13,23 @@
     </section>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
+const route = useRoute()
+
+watch(() => route.fullPath, newFullPath => {
+  if (newFullPath.includes('#')) {
+    const anchor = newFullPath.split('#')[1]
+    const elem = document.getElementById(anchor)
+    if (anchor) {
+      setTimeout(() => {
+        const y = elem.offsetTop;
+        console.log(y)
+        window.scroll({
+          top: y - 90,
+          behavior: 'smooth',
+        });
+      }, 50)
+    }
+  }
+}, {deep: true, immediate: true})
 </script>
