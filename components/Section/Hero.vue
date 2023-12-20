@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-4 md:mb-14 sticky mt-12 col-span-3 rounded-3xl">
+  <div class="mb-4 md:mb-14 mt-12 col-span-3 rounded-3xl">
     <div class="grid grid-cols-6">
       <div class="col-span-4">
         <div class="md:w-3/4">
