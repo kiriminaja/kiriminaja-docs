@@ -1,10 +1,8 @@
 <template>
-  <div v-if="readMode">
-    <div class="md:sticky md:top-24 shrink md:w-[15rem]">
-      <div class="grid gap-3">
-        <div v-for="(item, key) in results" :key="`c-${key}`">
-          <SectionCategoryGroup :item="item"/>
-        </div>
+  <div v-if="readMode" class="lg:block">
+    <div class="flex gap-3 md:grid overflow-x-auto md:sticky md:top-24 md:shrink md:w-[15rem]">
+      <div class="shrink-0 md:shrink" v-for="(item, key) in results" :key="`c-${key}`">
+        <SectionCategoryGroup :item="item"/>
       </div>
     </div>
   </div>
@@ -25,7 +23,6 @@
       </div>
     </div>
   </div>
-
 </template>
 <script setup lang="ts">
 const {data: navigation} = await useAsyncData('navigation', () => fetchContentNavigation('docs'))
