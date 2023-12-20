@@ -1,5 +1,5 @@
 <template>
-  <div v-if="readMode" class="lg:block sticky z-[199] top-20 mb-3 bg-background md:bg-transparent pt-2 pb-4 md:py-0 md:static">
+  <div v-if="readMode" class="lg:block sticky z-[199] md:z-[1] top-20 mb-3 bg-background md:bg-transparent pt-2 pb-4 md:py-0 md:static">
     <div class="flex gap-3 md:grid overflow-y-auto md:sticky md:top-24 md:shrink md:w-[15rem]">
       <div class="shrink-0 md:shrink" v-for="(item, key) in results" :key="`c-${key}`">
         <SectionCategoryGroup :item="item"/>

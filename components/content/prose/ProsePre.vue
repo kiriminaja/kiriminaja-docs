@@ -1,5 +1,7 @@
 <template>
-  <pre :class="$props.class"><slot/></pre>
+  <div>
+    <pre :class="$props.class"><slot/></pre>
+  </div>
 </template>
 
 <script setup lang="ts">

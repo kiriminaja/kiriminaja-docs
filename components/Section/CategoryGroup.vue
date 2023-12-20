@@ -1,7 +1,7 @@
 <template>
-  <div class="relative md:bg-surfaceContainer rounded-2xl">
+  <div class="relative md:bg-surfaceContainerLow rounded-2xl">
     <div
-        class="hidden md:flex px-4 py-2.5 rounded-full text-center md:text-left md:py-2 bg-surfaceContainer"
+        class="hidden md:flex px-4 py-2.5 rounded-full text-center md:text-left md:py-2 bg-surfaceContainerLow"
     >
       <span class="font-medium grow" v-text="item.title"></span>
     </div>

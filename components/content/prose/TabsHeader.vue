@@ -59,7 +59,7 @@ watch(
         :key="`${i}${label}`"
         :class="[
             'px-4 py-0.5 font-medium',
-            activeTabIndex === i ? 'active text-onInverseSurface dark:text-primary ring-2 ring-onInverseSurface dark:ring-primary rounded-full' : 'not-active'
+            activeTabIndex === i ? 'active text-onSurface bg-surfaceBright rounded-lg' : 'not-active'
             ]"
         @click="updateTabs($event, i)"
       >
