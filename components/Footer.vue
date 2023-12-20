@@ -20,11 +20,6 @@
 <script setup lang="ts">
 const headers = ref(null as any)
 onMounted(() => {
-  let req = new XMLHttpRequest();
-  req.open('GET', document.location, true);
-  req.send(null);
-  req.onload = function () {
-    headers.value = JSON.stringify(req.getAllResponseHeaders().toLowerCase());
-  };
+  headers.value = navigator.userAgent
 })
 </script>
