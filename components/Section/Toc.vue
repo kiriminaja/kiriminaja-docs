@@ -2,7 +2,7 @@
   <client-only>
     <div v-if="article.body.hasOwnProperty('toc')">
       <h3 class="font-semibold mb-4 leading-6">Akses Cepat</h3>
-      <ul class="grid prose gap-3">
+      <ul class="grid gap-3">
         <li :class="[
           route.fullPath.endsWith(`#${item.id}`) ? 'text-primary' : '',
           'text-md'
