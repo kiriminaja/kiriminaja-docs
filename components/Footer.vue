@@ -20,6 +20,9 @@
 <script setup lang="ts">
 const headers = ref(null as any)
 onMounted(() => {
-  headers.value = navigator.userAgent
+  headers.value = JSON.stringify({
+    'appName': navigator.appName,
+    'appVersion': navigator.appVersion,
+  })
 })
 </script>
