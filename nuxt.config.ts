@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         '@nuxt/content',
         '@nuxtjs/color-mode',
         'nuxt-anchorscroll',
+        '@pinia/nuxt',
     ],
     anchorscroll: {
         hooks: [
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
     },
     content: {
         highlight: {
-            theme: 'dracula'
+            theme: 'material-theme-palenight'
         },
     }
 })

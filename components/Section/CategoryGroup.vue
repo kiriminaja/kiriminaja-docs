@@ -5,7 +5,7 @@
   <nav class="grid">
     <NuxtLink :class="[
         route.fullPath.endsWith(child._path) ? 'border-primary text-primary' : 'border-outlineVariant border-dashed text-onSurfaceVariant',
-        'block py-1.5 rounded-full relative font-medium'
+        'block py-0.5 rounded-full relative font-medium'
     ]" :to="child._path"
               v-for="(child, kez) in item.children" :key="`d-${kez}`"
     >

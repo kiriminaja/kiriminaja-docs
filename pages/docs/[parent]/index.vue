@@ -11,6 +11,9 @@ const {data: article} = await useAsyncData('article', () => {
   }).findOne();
 })
 
+definePageMeta({
+  layout: 'docs'
+})
 
 const {data: projects} = await useAsyncData('category-childs', () => {
   return queryContent(`/docs/${parent}/`).only(['title', 'description', 'image_url', 'url', 'stacks', '_path']).sort({

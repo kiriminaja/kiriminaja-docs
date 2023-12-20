@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "@nuxt/ui": "^2.11.1",
+    "@pinia/nuxt": "^0.5.1",
     "@tailwindcss/typography": "^0.5.10",
-    "axios": "^1.6.2"
+    "axios": "^1.6.2",
+    "pinia": "^2.1.7"
   }
 }

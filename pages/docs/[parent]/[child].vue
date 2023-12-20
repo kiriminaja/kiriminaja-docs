@@ -12,6 +12,10 @@ const {data: article} = await useAsyncData('article', () => {
   }).findOne();
 })
 
+definePageMeta({
+  layout: 'docs'
+})
+
 useHead({
   title: article.value.title + ' – Docs'
 })

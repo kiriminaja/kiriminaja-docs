@@ -6,8 +6,8 @@
         '/docs',
     ]"
         />
-        <NavigationButton icon="compass" label="Develop" to="/docs"/>
-        <NavigationButton icon="academy" label="Akademi" to="https://youtube.com"/>
+        <NavigationButton icon="compass" label="Code" to="/docs"/>
+        <NavigationButton icon="academy" label="Youtube" target="_blank" to="https://www.youtube.com/kiriminaja"/>
       </div>
       <div class="md:mt-auto text-center hidden lg:inline-block">
         <IconDarkMode/>

@@ -13,7 +13,7 @@
       </div>
     </div>
     <span class="text-sm group-hover:font-medium text-center block" v-text="label"></span>
-    <NuxtLink :to="to" class="absolute inset-0"/>
+    <NuxtLink :to="to" :target="target || '_self'" class="absolute inset-0"/>
   </div>
 </template>
 <script lang="ts" setup>
@@ -21,7 +21,8 @@ const prop = defineProps<{
   fixed?: boolean,
   label: string,
   to: string,
-  icon: string,
+  target?: string,
+  icon: 'academy' | 'note' | 'compass',
   excludeUrl?: string[]
 }>()
 
