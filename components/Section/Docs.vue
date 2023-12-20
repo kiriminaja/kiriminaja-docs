@@ -1,20 +1,21 @@
 <template>
-  <div class="grow grid md:grid-cols-10 gap-10">
-    <div class="prose prose-primary md:col-span-7 my-4 dark:prose-invert max-w-none">
-      <div class="text-primary mb-3 font-medium"
-           v-text="parent.replace('-',' ').replace(/\b[a-z]/g, letter => letter.toUpperCase())"
-      ></div>
-      <ContentRenderer :value="article"/>
-    </div>
-    <div class="md:col-span-3">
+  <div class="md:grow md:grid md:grid-cols-10 gap-10">
+    <div class="md:order-2 md:col-span-3">
       <div class="px-8 text-sm sticky top-28">
         <div v-if="article.hasOwnProperty('endpoint')">
           <h3 class="font-semibold mb-4 leading-6">Endpoint</h3>
-          <div class="bg-surface ring-2 ring-success p-3 w-full rounded-xl text-success" v-text="article.endpoint"></div>
+          <div class="bg-surface ring-2 ring-success p-3 w-full rounded-xl text-success" v-text="article.endpoint"
+          ></div>
           <hr class="my-3 border-dashed border-outlineVariant">
         </div>
         <SectionToc :article="article"/>
       </div>
+    </div>
+    <div class="md:order-1 prose prose-primary md:col-span-7 my-4 dark:prose-invert max-w-none">
+      <div class="text-primary mb-3 font-medium"
+           v-text="parent.replace('-',' ').replace(/\b[a-z]/g, letter => letter.toUpperCase())"
+      ></div>
+      <ContentRenderer :value="article"/>
     </div>
   </div>
 </template>

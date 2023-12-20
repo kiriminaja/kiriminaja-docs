@@ -1,5 +1,5 @@
 <template>
-  <div class="grow grid md:grid-cols-10 gap-10">
+  <div class="md:grow md:grid md:grid-cols-10 gap-10">
     <div class="md:col-span-3 md:order-2">
       <div class="px-8 text-sm md:sticky md:top-48">
         <slot name="toc"/>

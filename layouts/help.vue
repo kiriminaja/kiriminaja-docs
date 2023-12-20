@@ -1,6 +1,6 @@
 <template>
   <NuxtLoadingIndicator/>
-  <div class="md:ml-[6rem]">
+  <div class="md:ml-[6rem] pb-36 md:pb-7">
     <Navbar/>
     <Sidebar/>
     <section>

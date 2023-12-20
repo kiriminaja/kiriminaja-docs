@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-20 z-50 bg-background py-3">
+  <div class="sticky top-20 md:top-20 z-50 bg-background py-3">
     <ul class="flex gap-3 overflow-x-auto">
       <li v-for="(item, i) in categories.items" :class="[
           'relative px-4 py-2.5 text-sm font-medium rounded-full shrink-0',

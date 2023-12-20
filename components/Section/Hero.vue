@@ -1,9 +1,9 @@
 <template>
-  <div class="mb-4 md:mb-14 mt-12 col-span-3 rounded-3xl">
+  <div class="mb-5 md:mb-14 mt-4 md:mt-12 col-span-3 rounded-3xl">
     <div class="grid md:grid-cols-6">
       <div class="md:col-span-4">
         <div class="md:w-3/4">
-          <h1 class="text-2xl md:text-5xl mb-4 md:leading-tight font-semibold" v-text="title"></h1>
+          <h1 class="text-3xl md:text-5xl mb-4 md:leading-tight font-semibold" v-text="title"></h1>
           <p class="text-lg slider-description text-onSurfaceVariant xl:w-9/12" v-text="description"></p>
         </div>
       </div>
