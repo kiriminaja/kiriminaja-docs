@@ -10,9 +10,17 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@nuxt/content',
         '@nuxtjs/color-mode',
-        'nuxt-anchorscroll',
         '@pinia/nuxt',
     ],
+    image: {
+        domains: [
+            'images.ctfassets.net'
+        ],
+        alias: {
+            cf: 'images.ctfassets.net'
+        },
+        contentful: {}
+    },
     anchorscroll: {
         hooks: [
             // Or any valid hook if needed

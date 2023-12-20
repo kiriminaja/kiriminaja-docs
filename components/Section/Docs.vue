@@ -4,7 +4,7 @@
       <div class="md:px-8 text-sm md:sticky md:top-28">
         <div v-if="article.hasOwnProperty('endpoint')">
           <h3 class="font-semibold mb-4 leading-6">Endpoint</h3>
-          <div class="bg-surfaceDim  p-3 w-full rounded-xl text-primary" v-text="article.endpoint"
+          <div class="bg-info  p-3 w-full rounded-xl text-onInfo" v-text="article.endpoint"
           ></div>
           <hr class="my-3 border-dashed border-outlineVariant">
         </div>

@@ -14,9 +14,9 @@
   </EntryDocs>
 </template>
 <script setup lang="ts">
-import {parseMarkdown} from "../../utils/parse-markdown";
 import EntryDocs from "../../components/Section/EntryDocs.vue";
 import Toc from "../../components/Section/Toc.vue";
+import markdownParser from "@nuxt/content/transformers/markdown";
 
 const route = useRoute()
 const slug = route.params.slug
@@ -31,7 +31,7 @@ if (typeof article.value === 'undefined' || article.value === null) {
   })
 }
 
-const mdResult = await parseMarkdown(article.value.fields.content)
+const mdResult = await markdownParser.parse('custom.md', article.value.fields.content)
 const ytLink = ref(null)
 if (article.value.fields.ytLink) {
   const url = new URL(article.value.fields.ytLink)

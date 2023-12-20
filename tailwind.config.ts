@@ -55,6 +55,7 @@ module.exports = {
         "./app.vue",
         "./utils/*.{js,ts}",
         "./error.vue",
+        "./node_modules/flowbite/**/*.js"
     ],
     darkMode: 'class',
     theme: {
@@ -64,7 +65,7 @@ module.exports = {
         }
     },
     plugins: [
+        require('flowbite/plugin'),
         require('@tailwindcss/typography'),
-
     ],
 }

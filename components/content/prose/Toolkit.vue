@@ -1,31 +1,36 @@
 <template>
   <div class="grid xl:grid-cols-5 gap-4">
-    <div class="xl:col-span-2">
-      <div class="border relative rounded-xl overflow-hidden border-outlineVariant mb-3">
-        <small class="absolute pointer-events-none text-xs top-3.5 left-4">Ekspedisi</small>
-        <select class="w-full pl-4 pb-2 pr-9 pt-7 appearance-none outline-none rounded-lg bg-transparent"
+    <div class="xl:col-span-2 grid gap-2">
+      <div>
+        <label for="courier" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ekspedisi</label>
+        <select id="courier"
+                class="bg-transparent border border-outlineVariant text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
                 v-model="params.selected_courier"
         >
           <option v-for="exp in options" :key="`cou-${exp.label}`" :value="exp.label" v-text="exp.label"></option>
         </select>
       </div>
-      <div class="border relative rounded-xl overflow-hidden border-outlineVariant mb-3">
-        <small class="absolute pointer-events-none top-3.5 left-4">Nilai Barang</small>
-        <input type="number" v-model="params.item_price" placeholder="Nilai Barang"
-               class="w-full pl-4 pb-2 pr-9 pt-7 appearance-none outline-none rounded-lg bg-transparent"
+      <div>
+        <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nilai Barang</label>
+        <input id="price" type="number" v-model="params.item_price" placeholder="Nilai Barang"
+               class="bg-transparent border border-outlineVariant text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
         >
       </div>
-      <div class="border relative rounded-xl overflow-hidden border-outlineVariant mb-3">
-        <small class="absolute pointer-events-none top-3.5 left-4">Ongkos Kirim</small>
-        <input type="number" v-model="params.shipping_cost" placeholder="Ongkos Kirim"
-               class="w-full pl-4 pb-2 pr-9 pt-7 appearance-none outline-none rounded-lg bg-transparent"
+      <div>
+        <label for="ongkir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ongkos Kirim</label>
+        <input id="ongkir" type="number" v-model="params.shipping_cost" placeholder="Ongkos Kirim"
+               class="bg-transparent border border-outlineVariant text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
         >
       </div>
-      <div class="border relative rounded-xl overflow-hidden border-outlineVariant mb-3">
-        <input type="checkbox" v-model="params.use_insurance" class="absolute left-4 top-1/2 -translate-y-1/2"
-               id="vehicle2" name="vehicle2" value="true"
-        >
-        <label for="vehicle2" class="pl-10 select-none py-3 block">Gunakan Asuransi</label>
+      <div class="flex items-start mb-6">
+        <div class="flex items-center h-5">
+          <input id="insurance" v-model="params.use_insurance" type="checkbox" value="true"
+                 class="w-4 h-4 border text-primary bg-background border-outlineVariant rounded focus:ring-3 focus:ring-primary dark:ring-offset-primary"
+                 required
+          >
+        </div>
+        <label for="insurance" class="ms-2 text-sm font-medium">Gunakan
+          Asuransi</label>
       </div>
     </div>
     <div class="xl:col-span-3">

@@ -2,6 +2,7 @@
   <div class="text-center not-prose w-full py-3 md:py-5 relative">
     <img
         class="inline-block max-w-[90vw] md:max-w-[25rem] rounded-xl shadow-md"
+        loading="lazy"
         :src="refinedSrc"
         :alt="alt"
         :width="width"
@@ -26,6 +27,7 @@
           class="inline-block m-0 max-w-[70vw] rounded-md"
           :src="refinedSrc"
           :alt="alt"
+          loading="lazy"
           :width="width"
           :height="height"
       />
