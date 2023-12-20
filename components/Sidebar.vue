@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full z-[999] md:w-[6rem] py-4 fixed bottom-0 gap-2 md:gap-3 md:top-0 md:left-0 bg-surfaceContainerLow">
+  <div class="w-full z-[999] md:w-[6rem] pt-3 pb-4 md:pb-4 fixed bottom-0 gap-2 md:gap-3 md:top-0 md:left-0 bg-surfaceContainerLow">
     <div class="md:flex h-full md:flex-col">
       <div class="flex flex-row lg:block">
         <NavigationButton icon="note" :active-when="[
