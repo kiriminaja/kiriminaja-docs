@@ -16,6 +16,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import {ProseH1} from "../content/prose/ProseH1.vue";
+
 defineProps<{
   title: string,
   description: string,
