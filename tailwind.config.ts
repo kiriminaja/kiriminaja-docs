@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 const colorWays: string[] = [
     'primary',
     'secondary',
@@ -62,6 +63,13 @@ module.exports = {
         colors: colors,
         configViewer: {
             links: "~/assets/main.css"
+        },
+        extend: {
+            fontFamily: {
+                'sans': ['Inter', '-apple-system', ...defaultTheme.fontFamily.sans],
+                'display': ['Lora', '-apple-system', ...defaultTheme.fontFamily.sans],
+                'mono': ['Inconsolata', ...defaultTheme.fontFamily.mono],
+            },
         }
     },
     plugins: [
