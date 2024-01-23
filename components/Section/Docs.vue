@@ -15,7 +15,7 @@
       <div class="text-primary mb-3 font-medium"
            v-text="parent.replace('-',' ').replace(/\b[a-z]/g, letter => letter.toUpperCase())"
       ></div>
-      <ContentRenderer :value="article"/>
+      <ContentRenderer v-if="article.body" :value="article"/>
     </div>
   </div>
 </template>
