@@ -3,14 +3,16 @@ export default defineNuxtConfig({
         enabled: true
     },
     runtimeConfig: {
-        ctfToken: process.env.CTF_TOKEN || ''
+        ctfToken: process.env.CTF_TOKEN || '',
+        public: {
+            appMode: process.env.APP_MODE || 'help'
+        }
     },
     modules: [
         '@nuxtjs/algolia',
         '@nuxtjs/tailwindcss',
         '@nuxt/content',
-        '@nuxtjs/color-mode',
-        '@pinia/nuxt',
+        '@nuxtjs/color-mode'
     ],
     image: {
         domains: [

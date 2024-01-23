@@ -14,6 +14,13 @@
   </EntryDocs>
 </template>
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
+const mode = config.public.appMode
+if (mode !== 'help') {
+  navigateTo('/')
+}
+
 import EntryDocs from "../../components/Section/EntryDocs.vue";
 import Toc from "../../components/Section/Toc.vue";
 import markdownParser from "@nuxt/content/transformers/markdown";

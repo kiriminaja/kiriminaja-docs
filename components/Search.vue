@@ -37,10 +37,12 @@
   </div>
 </template>
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
+const mode = config.public.appMode
+
 const route = useRoute()
-const isDocs = computed(() => {
-  return route.fullPath.startsWith('/docs')
-})
+const isDocs = mode === 'developer'
 
 const input = ref('')
 const results = ref([])

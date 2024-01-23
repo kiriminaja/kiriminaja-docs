@@ -13,6 +13,12 @@
   </div>
 </template>
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
+const mode = config.public.appMode
+if (mode !== 'help') {
+  navigateTo('/')
+}
 const route = useRoute()
 const slug = route.params.slug
 
