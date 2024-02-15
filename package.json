@@ -20,11 +20,13 @@
   "dependencies": {
     "@docsearch/css": "^3.5.2",
     "@docsearch/js": "^3.5.2",
+    "@material/web": "^1.2.0",
     "@nuxtjs/algolia": "^1.10.1",
     "@pinia/nuxt": "^0.5.1",
     "@tailwindcss/typography": "^0.5.10",
     "flowbite": "^2.2.1",
     "flowbite-typography": "^1.0.3",
-    "global": "^4.4.0"
+    "global": "^4.4.0",
+    "vue-material": "^1.0.0-beta-16"
   }
 }

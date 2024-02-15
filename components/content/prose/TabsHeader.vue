@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { nextTick, ref, watch } from 'vue'
 import type { PropType } from 'vue'
+import '@material/web/ripple/ripple.js';
 
 const props = defineProps({
   tabs: {
@@ -51,20 +52,24 @@ watch(
 </script>
 
 <template>
-  <div class="tabs-header overflow-hidden relative border-dashed text-outlineVariant rounded-t-lg px-3 py-2.5">
+  <div class="tabs-header overflow-hidden relative border-dashed text-onSurfaceVariant rounded-t-lg px-3 py-2.5">
     <span class="bg-surfaceBright inset-0 absolute opacity-25"></span>
     <div v-if="tabs" ref="tabsRef" class="tabs gap-3 flex relative">
-      <button
-        v-for="({ label }, i) in tabs"
-        :key="`${i}${label}`"
-        :class="[
-            'px-4 py-0.5 font-medium',
-            activeTabIndex === i ? 'active text-onSurface bg-surfaceBright rounded-lg' : 'not-active'
-            ]"
-        @click="updateTabs($event, i)"
+      <div class="relative inline rounded-md overflow-hidden"
+            v-for="({ label }, i) in tabs"
+            :key="`${i}${label}`"
       >
-        {{ label }}
-      </button>
+        <md-ripple/>
+        <button
+            :class="[
+            'px-4 py-0.5 font-medium',
+            activeTabIndex === i ? 'active bg-surface rounded-lg' : 'not-active'
+            ]"
+            @click="updateTabs($event, i)"
+        >
+          {{ label }}
+        </button>
+      </div>
       <span
         ref="highlightUnderline"
         class="highlight-underline"

@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <NuxtLink :to="href" class="px-4 py-3 rounded-full bg-primary not-prose text-onPrimary">
-      <slot />
-    </NuxtLink>
-  </div>
+  <NuxtLink :to="href" class="inline-block">
+    <md-filled-button>
+      <slot/>
+    </md-filled-button>
+  </NuxtLink>
 </template>
 
-<script>
-export default {
-  name: "ButtonLink",
-  props: {
-    href: {
-      type: String
-    }
-  }
-};
+<script setup lang="ts">
+import '@material/web/button/filled-button.js';
+
+defineProps<{
+  href: string,
+}>()
 </script>

@@ -70,5 +70,10 @@ export default defineNuxtConfig({
         highlight: {
             theme: 'material-theme-palenight'
         },
+    },
+    vue: {
+        compilerOptions: {
+            isCustomElement: (tag) => tag.includes('md')
+        }
     }
 })

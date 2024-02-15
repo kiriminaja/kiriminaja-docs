@@ -1,18 +1,19 @@
 <template>
   <div class="sticky top-16 md:top-20 z-50 bg-background py-3">
-    <ul class="flex gap-3 overflow-x-auto">
-      <li v-for="(item, i) in categories.items" :class="[
-          'relative px-4 py-2.5 text-sm font-medium rounded-full shrink-0',
-          (route.fullPath.includes(`/category/${item.fields.slug}`) ? 'bg-primary text-onPrimary' : 'bg-surfaceContainer text-secondary')
-      ]"
-      >
-        <span v-text="item.fields.title"></span>
-        <NuxtLink :to="`/category/${item.fields.slug}`" class="absolute inset-0"/>
-      </li>
-    </ul>
+    <client-only>
+      <md-chip-set>
+        <md-filter-chip :selected="route.fullPath.includes(`/category/${item.fields.slug}`)"
+                        @click="navigateTo(`/category/${item.fields.slug}`)" v-for="(item, i) in categories.items"
+                        :label="item.fields.title"
+        ></md-filter-chip>
+      </md-chip-set>
+    </client-only>
   </div>
 </template>
 <script setup lang="ts">
+import '@material/web/chips/chip-set.js';
+import '@material/web/chips/filter-chip.js';
+
 const route = useRoute()
 const {data: categories} = await useAsyncData('categories', () => $fetch('/api/help/categories'))
 

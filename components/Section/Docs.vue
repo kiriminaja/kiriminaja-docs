@@ -3,8 +3,11 @@
     <div class="md:order-2 md:col-span-3">
       <div class="md:px-8 text-sm md:sticky md:top-28">
         <div v-if="article.hasOwnProperty('endpoint')">
-          <h3 class="font-semibold mb-4 leading-6">Endpoint</h3>
-          <div class="bg-info  p-3 w-full rounded-xl text-onInfo" v-text="article.endpoint"
+          <div class="flex justify-between items-start">
+            <h3 class="font-semibold text-lg mb-4 leading-6">Point</h3>
+            <MethodBadge :method="article.method || 'POST'"/>
+          </div>
+          <div class="text-onSurfaceVariant text-sm" v-text="article.endpoint"
           ></div>
           <hr class="my-3 border-dashed border-outlineVariant">
         </div>
@@ -12,14 +15,13 @@
       </div>
     </div>
     <div class="md:order-1 prose prose-primary md:col-span-7 my-4 dark:prose-invert max-w-none">
-      <div class="text-primary mb-3 font-medium"
-           v-text="parent.replace('-',' ').replace(/\b[a-z]/g, letter => letter.toUpperCase())"
-      ></div>
       <ContentRenderer v-if="article.body" :value="article"/>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
+import MethodBadge from "../MethodBadge.vue";
+
 defineProps<{
   article: object,
   parent: string
@@ -60,7 +62,7 @@ onMounted(() => {
     // create the copy button
     const copy = document.createElement("button")
     copy.classList.add(
-        "bg-onBackground",
+        "bg-surface",
         "p-2",
         "text-xs",
         "rounded-lg",

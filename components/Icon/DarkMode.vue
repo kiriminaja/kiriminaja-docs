@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import '@material/web/ripple/ripple.js';
+
 const colorMode = useColorMode()
 const switchColor = () => {
   if (colorMode.preference == 'light') {
@@ -13,6 +15,7 @@ const switchColor = () => {
 
 <template>
   <div class="lg:w-[3.5rem] inline-block relative outline outline-outlineVariant hover:bg-surfaceVariant aspect-square overflow-hidden rounded-full">
+    <md-ripple/>
     <div :class="[
         'transition-all',
         colorMode.preference === 'system' ? '-translate-y-2/3' : (colorMode.preference  === 'dark' ? '-translate-y-1/3' : 'translate-y-0')

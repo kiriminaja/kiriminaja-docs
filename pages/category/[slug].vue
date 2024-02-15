@@ -4,19 +4,18 @@
   />
   <div class="grid gap-2">
     <div v-for="(article, key) in category.articles" :key="`key-${key}`"
-         class="relative bg-surfaceContainerLow hover:bg-secondaryContainer px-5 rounded-lg first:rounded-t-3xl last:rounded-b-3xl lg:flex py-4 hover:text-primary border-b-outlineVariant"
+         class="relative bg-surfaceContainerLow hover:bg-secondaryContainer px-5 rounded-xl py-4 lg:px-6 lg:py-5 hover:text-primary border-b-outlineVariant"
     >
-      <h3 class="text-lg font-medium md:text-xl grow" v-text="article.fields.title"></h3>
-      <span class="text-primary shrink-0 font-medium">Selengkapnya</span>
+      <md-ripple/>
+      <h3 class="text-lg mb-1.5 font-medium md:text-xl grow" v-text="article.fields.title"></h3>
+      <p class="line-clamp-2" v-text="article.fields.description"></p>
       <NuxtLink :to="`/article/${article.fields.slug}`" class="inset-0 absolute"/>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-const config = useRuntimeConfig()
-
-const mode = config.public.appMode
-if (mode !== 'help') {
+import '@material/web/ripple/ripple.js';
+if (!isHelp()) {
   navigateTo('/')
 }
 const route = useRoute()

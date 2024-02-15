@@ -31,9 +31,9 @@ export default defineComponent({
       {
         class: {
           'code-group': true,
-          'bg-[var(--tw-prose-pre-bg)]': true,
-          'rounded-xl': true,
-          'overflow-hidden': true,
+          'bg-outlineVariant': true,
+          'rounded-md': true,
+          'overflow-hidden': false,
           'first-tab': this.activeTabIndex === 0
         }
       },

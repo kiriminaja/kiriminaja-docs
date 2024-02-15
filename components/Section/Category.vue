@@ -8,8 +8,9 @@
   </div>
   <div v-else class="grid gap-5 md:grid-cols-3 md:gap-7">
     <div v-for="(item, key) in results" :key="`head-${key}`"
-         class="relative transition-all group overflow-hidden bg-surface p-5 rounded-3xl hover:ring-4 hover:ring-primary"
+         class="relative transition-all group overflow-hidden bg-surface p-5 rounded-3xl"
     >
+      <md-ripple></md-ripple>
       <div class="flex items-center gap-5">
         <div
             class="bg-secondaryContainer relative px-4 py-3.5 items-center aspect-square rounded-full text-onSecondaryContainer group-hover:bg-primary group-hover:text-onPrimary"
@@ -25,6 +26,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import '@material/web/ripple/ripple.js';
+
 const {data: navigation} = await useAsyncData('navigation', () => fetchContentNavigation('docs'))
 const results = navigation.value[0].children
 

@@ -1,5 +1,6 @@
 <template>
   <div class="text-center not-prose w-full py-3 md:py-5 relative">
+    <md-ripple/>
     <img
         class="inline-block max-w-[90vw] md:max-w-[25rem] rounded-xl shadow-md"
         loading="lazy"
@@ -38,6 +39,7 @@
 <script setup lang="ts">
 import {withTrailingSlash, withLeadingSlash, joinURL} from 'ufo'
 import {useRuntimeConfig, computed} from '#imports'
+import '@material/web/ripple/ripple.js';
 
 const expand = ref(false)
 
