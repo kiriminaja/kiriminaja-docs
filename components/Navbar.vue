@@ -17,7 +17,7 @@
         </div>
         <div class="col-span-1 flex items-center justify-end">
           <IconDarkMode/>
-          <Search/>
+<!--          <Search/>-->
         </div>
       </div>
     </SectionContainer>
