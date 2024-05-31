@@ -1,6 +1,6 @@
 <template>
-  <div v-if="readMode" class="sticky top-24">
-      <div class="shrink-0 md:shrink" v-for="(item, key) in results" :key="`c-${key}`">
+  <div v-if="readMode" class="hidden lg:sticky lg:grid flex-wrap gap-3 lg:top-24">
+      <div v-for="(item, key) in results" :key="`c-${key}`">
         <SectionCategoryGroup :item="item"/>
       </div>
   </div>

@@ -5,15 +5,16 @@
     >
       <span class="text-xs uppercase font-semibold grow" v-text="item.title"></span>
     </div>
-    <nav class="z-999 top-full md:static flex gap-2 md:grid">
+    <nav class="z-999 top-full md:static flex flex-wrap gap-2 md:grid">
       <NuxtLink :class="[
-        route.fullPath.endsWith(child._path) ? 'text-primary' : 'text-onSurface',
+        route.fullPath.endsWith(child._path) ? 'text-primary outline-primary outline-2 bg-primaryContainer' : 'text-onSurface outline-outlineVariant outline-1',
         'block relative font-medium',
-        'shrink-0'
+        'shrink-0',
+        'px-2 py-1 outline rounded-lg'
     ]" :to="child._path"
                 v-for="(child, kez) in item.children" :key="`d-${kez}`"
       >
-        <span class="text-sm" v-text="child.title"></span>
+        <span v-text="child.title"></span>
       </NuxtLink>
     </nav>
   </div>
