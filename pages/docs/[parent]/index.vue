@@ -3,12 +3,6 @@
 </template>
 <script setup lang="ts">
 const config = useRuntimeConfig()
-
-const mode = config.public.appMode
-if (mode !== 'developer') {
-  navigateTo('/')
-}
-
 const route = useRoute()
 const parent = route.params.parent
 

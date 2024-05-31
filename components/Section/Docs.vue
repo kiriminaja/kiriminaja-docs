@@ -1,23 +1,27 @@
 <template>
-  <div class="md:grow md:grid md:grid-cols-10 gap-10">
-    <div class="md:order-2 md:col-span-3">
-      <div class="md:px-8 text-sm md:sticky md:top-28">
-        <div v-if="article.hasOwnProperty('endpoint')">
-          <div class="flex justify-between items-start">
-            <h3 class="font-semibold text-lg mb-4 leading-6">Point</h3>
-            <MethodBadge :method="article.method || 'POST'"/>
+  <section>
+    <SectionContainer>
+      <div class="md:grow md:grid md:grid-cols-10 gap-10">
+        <div class="md:order-2 md:col-span-3">
+          <div class="md:px-8 text-sm md:sticky md:top-28">
+            <div v-if="article.hasOwnProperty('endpoint')">
+              <div class="flex justify-between items-start">
+                <h3 class="font-semibold text-lg mb-4 leading-6">Point</h3>
+                <MethodBadge :method="article.method || 'POST'"/>
+              </div>
+              <div class="text-onSurfaceVariant text-sm" v-text="article.endpoint"
+              ></div>
+              <hr class="my-3 border-dashed border-outlineVariant">
+            </div>
+            <SectionToc :article="article"/>
           </div>
-          <div class="text-onSurfaceVariant text-sm" v-text="article.endpoint"
-          ></div>
-          <hr class="my-3 border-dashed border-outlineVariant">
         </div>
-        <SectionToc :article="article"/>
+        <div class="md:order-1 prose prose-primary md:col-span-7 my-4 dark:prose-invert max-w-none">
+          <ContentRenderer v-if="article.body" :value="article"/>
+        </div>
       </div>
-    </div>
-    <div class="md:order-1 prose prose-primary md:col-span-7 my-4 dark:prose-invert max-w-none">
-      <ContentRenderer v-if="article.body" :value="article"/>
-    </div>
-  </div>
+    </SectionContainer>
+  </section>
 </template>
 <script lang="ts" setup>
 import MethodBadge from "../MethodBadge.vue";

@@ -1,15 +1,19 @@
 <template>
-  <LayoutBase>
-    <section>
+  <BaseLayout>
+    <main class="py-16">
       <SectionContainer>
-        <div class="md:flex gap-10">
-          <SectionCategory :read-mode="true"/>
-          <slot/>
+        <div class="grid grid-cols-12">
+          <div class="col-span-10 lg:order-2">
+            <slot/>
+          </div>
+          <div class="col-span-2 lg:order-1">
+            <SectionCategory :read-mode="true"/>
+          </div>
         </div>
       </SectionContainer>
-    </section>
-  </LayoutBase>
+    </main>
+  </BaseLayout>
 </template>
 <script setup>
-import LayoutBase from "../components/Section/LayoutBase.vue";
+import BaseLayout from './default.vue'
 </script>

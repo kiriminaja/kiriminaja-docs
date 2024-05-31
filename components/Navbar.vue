@@ -1,20 +1,27 @@
 <template>
-  <nav class="py-3 md:py-4 z-[100] sticky top-0 backdrop-blur-2xl bg-background">
-    <SectionContainer>
-      <div class="flex gap-5 items-center">
-        <div class="col-auto md:mr-10 hidden md:block">
+  <div
+      class="sticky top-0 z-[99] pb-2.5 md:py-4 gap-2 backdrop-blur md:gap-3"
+  >
+    <div class="bg-surface absolute inset-0 opacity-70"></div>
+    <SectionContainer class="relative">
+      <div class="grid grid-cols-5 items-center">
+        <div class="col-span-1">
           <div class="relative">
-            <Logo/>
+            <IconLogo/>
             <NuxtLink to="/" class="absolute inset-0"/>
           </div>
         </div>
-        <div class="grow">
+        <div class="flex col-span-3 justify-center">
+          <NavigationButton icon="mode_heat" :fixed="true" label="Docs" :to="'/'"/>
+          <NavigationButton icon="groups" label="Teams" :to="'/teams'"/>
+        </div>
+        <div class="col-span-1 flex items-center justify-end">
+          <IconDarkMode/>
           <Search/>
         </div>
       </div>
     </SectionContainer>
-  </nav>
+  </div>
 </template>
 <script setup lang="ts">
-import Logo from "./Icon/Logo.vue";
 </script>

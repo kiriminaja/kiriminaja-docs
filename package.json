@@ -20,6 +20,7 @@
   "dependencies": {
     "@docsearch/css": "^3.5.2",
     "@docsearch/js": "^3.5.2",
+    "@material/material-color-utilities": "^0.2.7",
     "@material/web": "^1.2.0",
     "@nuxtjs/algolia": "^1.10.1",
     "@pinia/nuxt": "^0.5.1",

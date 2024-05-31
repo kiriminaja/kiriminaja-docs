@@ -2,17 +2,11 @@
   <SectionDocs :article="article" :parent="parent"></SectionDocs>
 </template>
 <script setup lang="ts">
-const config = useRuntimeConfig()
-
-const mode = config.public.appMode
-if (mode !== 'developer') {
-  navigateTo('/')
-}
 const route = useRoute()
 const parent = route.params.parent
 const slug = route.params.child
 
-const {data: article} = await useAsyncData('article', () => {
+const {data: article} = await useAsyncData(`article${slug}`, () => {
   return queryContent(`/docs/${parent}/`).where({
     '_path': `/docs/${parent}/${slug}`
   }).findOne();
@@ -21,6 +15,7 @@ const {data: article} = await useAsyncData('article', () => {
 definePageMeta({
   layout: 'docs'
 })
+
 
 useHead({
   title: article.value.title + ' – Docs'

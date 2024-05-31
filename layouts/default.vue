@@ -1,6 +1,10 @@
 <template>
-  <LayoutBase><slot/></LayoutBase>
+  <NuxtLoadingIndicator/>
+  <div>
+    <div class="min-h-[calc(89vh-2rem)]">
+      <Navbar/>
+      <slot/>
+    </div>
+    <Footer/>
+  </div>
 </template>
-<script setup lang="ts">
-import LayoutBase from "../components/Section/LayoutBase.vue";
-</script>
