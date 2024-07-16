@@ -2,7 +2,6 @@ import 'dotenv/config'
 import {themes as prismThemes} from "prism-react-renderer";
 import type {Config} from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-import type * as Redocusaurus from 'redocusaurus';
 
 
 const config: Config = {
@@ -18,18 +17,13 @@ const config: Config = {
     },
     i18n: {
         defaultLocale: "en",
-        locales: ["id", "en"],
+        locales: ["en"],
         localeConfigs: {
             en: {
                 label: "English",
                 direction: "ltr",
                 htmlLang: "en-US",
-            },
-            id: {
-                label: "Bahasa",
-                direction: "ltr",
-                htmlLang: "id-ID",
-            },
+            }
         },
     },
 

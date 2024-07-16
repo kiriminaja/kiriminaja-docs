@@ -24,6 +24,7 @@
     "docusaurus-json-schema-plugin": "^1.12.2",
     "dotenv": "^16.4.5",
     "prism-react-renderer": "^2.3.0",
+    "pushfeedback-react": "^0.1.40",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
