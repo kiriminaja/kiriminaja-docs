@@ -1,0 +1,35 @@
+---
+sidebar_position: 0
+hide_table_of_contents: true
+---
+
+import DocCardList from '@theme/DocCardList'
+import { useCurrentSidebarCategory } from '@docusaurus/theme-common'
+
+
+# Instant Delivery
+
+This payment API is essential for users whose accounts are not registered as TOP (Term of Payment) members. If you are a TOP member, you can bypass this step and proceed directly to creating an AWB (Air Waybill) request seamlessly. This ensures a smoother and more efficient process for managing your shipments.
+
+:::info
+For Term of Payment member you will not required to pay any amount while triggering request awb. Our callbacks will automatically scheduled (mark as paid)
+:::
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant KiriminAja
+    participant PG
+    participant 3PL
+    Client ->> KiriminAja: Request AWB (Both COD & Non-COD)
+    KiriminAja -->> PG: Create Non-COD Payment (If Necessary)
+    PG -->> KiriminAja: Confirm Payment (If any of Non-COD)
+    KiriminAja -->> KiriminAja: Schedule Push AWB
+    KiriminAja ->> 3PL: Create AWB (Pickup & Drop-Off)
+    3PL ->> KiriminAja: Confirm AWB Created
+    KiriminAja --) Client: AWB Confirmed (Webhooks)
+
+```
+
+
+<DocCardList items={useCurrentSidebarCategory().items} />
