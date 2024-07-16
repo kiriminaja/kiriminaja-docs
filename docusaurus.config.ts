@@ -15,6 +15,19 @@ const config: Config = {
     markdown: {
         mermaid: true
     },
+    plugins: [
+        async function myPlugin(context, options) {
+            return {
+                name: "docusaurus-tailwindcss",
+                configurePostCss(postcssOptions) {
+                    // Appends TailwindCSS and AutoPrefixer.
+                    postcssOptions.plugins.push(require("tailwindcss"));
+                    postcssOptions.plugins.push(require("autoprefixer"));
+                    return postcssOptions;
+                },
+            };
+        },
+    ],
     i18n: {
         defaultLocale: "en",
         locales: ["en"],
@@ -87,6 +100,7 @@ const config: Config = {
         },
         image: "img/cover.jpg",
         navbar: {
+            title: 'KiriminAja',
             logo: {
                 alt: "KiriminAja Logo",
                 src: "img/logo.svg",
