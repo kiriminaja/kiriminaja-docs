@@ -2,6 +2,8 @@ import 'dotenv/config'
 import {themes as prismThemes} from "prism-react-renderer";
 import type {Config} from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import type * as Redocusaurus from 'redocusaurus';
+
 
 const config: Config = {
     title: "KiriminAja Developer",
@@ -71,6 +73,31 @@ const config: Config = {
                 },
             } satisfies Preset.Options,
         ],
+        // Redocusaurus config
+        [
+            'redocusaurus',
+            {
+                // Plugin Options for loading OpenAPI files
+                specs: [
+                    // Pass it a path to a local OpenAPI YAML file
+                    {
+                        // Redocusaurus will automatically bundle your spec into a single file during the build
+                        spec: 'openapi/index.yaml',
+                        route: '/api/',
+                    },
+                    // You can also pass it a OpenAPI spec URL
+                    {
+                        spec: 'https://redocly.github.io/redoc/openapi.yaml',
+                        route: '/openapi/',
+                    },
+                ],
+                // Theme Options for modifying how redoc renders them
+                theme: {
+                    // Change with your site colors
+                    primaryColor: '#1890ff',
+                },
+            },
+        ] satisfies Redocusaurus.PresetEntry,
     ],
 
     themeConfig: {
