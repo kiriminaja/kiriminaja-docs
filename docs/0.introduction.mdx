@@ -1,0 +1,43 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Get Started
+
+This is the official documentation website for the API. We've divided the documentation into groups, each trying to address a specific use case or audience.
+Please read the documentation at a glance about KiriminAja if you are unsure whether KiriminAja will suit your needs or fit your programming style.
+
+**Requirement**
+- Any programming language
+- Knowledge on REST API
+
+## Endpoint
+
+<Tabs>
+  <TabItem value="apple" label="Sandbox" default>
+```shell [Sandbox]
+https://tdev.kiriminaja.com
+```
+  </TabItem>
+  <TabItem value="orange" label="Production (Live)">
+```shell [Production]
+https://client.kiriminaja.com
+```
+  </TabItem>
+</Tabs>
+
+## Authorization
+Contact us to get a ``Bearer {token}`` for sandbox and production. All packages through the sandbox may be canceled at any time. The response between sandbox and production is exactly the same, only the accuracy of the data is different.
+
+Webhook automation, generate awb callback, tracking and get won't run in sandbox URLs. We will restrict IP addresses when entering the production stage, it is not recommended to use the IP of the host which changes frequently.
+
+| Header            | Value            |
+|-------------------|------------------|
+| ``Authorization`` | Bearer `{token}` |
+
+## TL;DR
+1. We use HTTP Response Status Code 200 for each response from the API with body status and text as well as data (adjusting the endpoint).
+2. HTTP Response Codes outside 200 can occur due to server problems or errors in the request data.
+3. 1 (One) API key can only have one webhook enpdpoint. The security of webhook endpoints is beyond our responsibility.
+4. Bearer token staging cannot be used for production.
+5. It is forbidden to disseminate bearer tokens to any party.
+6. It is forbidden to make a massive number of API calls at the same time with the same payload data.
