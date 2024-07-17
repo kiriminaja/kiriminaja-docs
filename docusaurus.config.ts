@@ -16,6 +16,12 @@ const config: Config = {
         mermaid: true
     },
     plugins: [
+        [
+            require.resolve("@easyops-cn/docusaurus-search-local"),
+            ({
+                hashed: true
+            })
+        ],
         async function myPlugin(context, options) {
             return {
                 name: "docusaurus-tailwindcss",
@@ -83,21 +89,6 @@ const config: Config = {
     ],
 
     themeConfig: {
-        // Replace with your project's social card
-        algolia: {
-            appId: process.env.ALGOLIA_APP_ID,
-            apiKey: process.env.ALGOLIA_APP_KEY,
-            indexName: process.env.ALGOLIA_INDEX_NAME,
-            contextualSearch: true,
-            externalUrlRegex: 'external\\.com|domain\\.com',
-            replaceSearchResultPathname: {
-                from: '/docs/', // or as RegExp: /\/docs\//
-                to: '/',
-            },
-            searchParameters: {},
-            searchPagePath: 'search',
-            insights: false,
-        },
         image: "img/cover.jpg",
         navbar: {
             title: 'KiriminAja',
