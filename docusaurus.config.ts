@@ -103,7 +103,16 @@ const config: Config = {
                     position: "left",
                     label: "Docs",
                 },
-                {to: "/blog", label: "Blog", position: "left"},
+                {
+                    to: "/blog",
+                    label: "Blog",
+                    position: "left"
+                },
+                {
+                    href: "https://status.kiriminaja.com/",
+                    label: "Status",
+                    position: "left"
+                },
                 {
                     type: "localeDropdown",
                     position: "right",
