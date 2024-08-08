@@ -13,4 +13,8 @@ docusaurus:
 hola:
   label: Hola
   permalink: /hola
-  description: Hola tag description
+  description: An introduction of anything of info
+releases:
+  label: Releases
+  permalink: /releases
+  description: Information update, release, and patch about our API system
