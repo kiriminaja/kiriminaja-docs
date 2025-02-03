@@ -2,48 +2,24 @@
 sidebar_position: 1
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# Overview
+KiriminAja Mitra API is our integration product that help you to enable Shipping features from check rates, create order, request pickup, until order tracking into your platform easily.  
 
-# Get Started
+## Get Started
 
-This is the official documentation website for the API. We've divided the documentation into groups, each trying to address a specific use case or audience.
-Please read the documentation at a glance about KiriminAja if you are unsure whether KiriminAja will suit your needs or fit your programming style.
+Getting Started Using KiriminAja API Postman Collection.
+Postman collection is the easiest way to use the KiriminAja REST API. 
 
-## Definitions
-1. **[Express Delivery](./3.express/README.mdx)** <br/>
-    Express delivery is a type of shipping service that guarantees faster delivery times compared to standard shipping methods. It is often used for urgent or time-sensitive shipments and typically ensures delivery within a specified short period, such as overnight, next-day, or same-day delivery.
-2. **[Instant Delivery](./4.instant/README.mdx)** <br/>
-    Instant delivery is a shipping service that aims to deliver items almost immediately after an order is placed. This service is typically used for urgent needs where customers require their purchases within a very short time frame, often within hours.
+1. Install Postman if you haven’t installed it yet. For a more detailed guide install Postman, see "[Installing and Updating Postman](https://learning.postman.com/docs/getting-started/installation-and-updates/)"
+2. [Download KiriminAja Mitra API Postman Collection here](/collection/2025-02-03.json).
+3. Import KiriminAja Logistic API Postman Collection to your Postman App.
+4. Use KiriminAja API Key to authenticate to KiriminAja Mitra API. For more information about step by step get KiriminAja API Key, see “[How to Get KiriminAja API Key](#how-to-get-kiriminaja-api-key)”
+5. Update value `api_key` on postman collection with API key generated on Sandbox Dashboard. 
 
-## Endpoint
+## How to Get KiriminAja API Key
+1. Go to [this page](https://sandbox.kiriminaja.com/) and register for a Sandbox account. 
+2. Complete the registration process. 
+3. Login to [Sandbox Dashboard](https://sandbox.kiriminaja.com/login). 
+4. Waiting Approval. 
+5. Go to menu Integrasi and copy your API Key. 
 
-<Tabs>
-  <TabItem value="apple" label="Sandbox" default>
-```shell [Sandbox]
-https://tdev.kiriminaja.com
-```
-  </TabItem>
-  <TabItem value="orange" label="Production (Live)">
-```shell [Production]
-https://client.kiriminaja.com
-```
-  </TabItem>
-</Tabs>
-
-## Authorization
-Contact us to get a ``Bearer {token}`` for sandbox and production. All packages through the sandbox may be canceled at any time. The response between sandbox and production is exactly the same, only the accuracy of the data is different.
-
-Webhook automation, generate awb callback, tracking and get won't run in sandbox URLs. We will restrict IP addresses when entering the production stage, it is not recommended to use the IP of the host which changes frequently.
-
-| Header            | Value            |
-|-------------------|------------------|
-| ``Authorization`` | Bearer `{token}` |
-
-## TL;DR
-1. We use HTTP Response Status Code 200 for each response from the API with body status and text as well as data (adjusting the endpoint).
-2. HTTP Response Codes outside 200 can occur due to server problems or errors in the request data.
-3. 1 (One) API key can only have one webhook enpdpoint. The security of webhook endpoints is beyond our responsibility.
-4. Bearer token staging cannot be used for production.
-5. It is forbidden to disseminate bearer tokens to any party.
-6. It is forbidden to make a massive number of API calls at the same time with the same payload data.

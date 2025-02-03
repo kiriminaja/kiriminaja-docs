@@ -1,7 +1,9 @@
 import 'dotenv/config'
-import {themes as prismThemes} from "prism-react-renderer";
-import type {Config} from "@docusaurus/types";
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import rehypeShiki, { RehypeShikiOptions } from "@shikijs/rehype";
+import { bundledLanguages, type BundledLanguage } from "shiki";
 
 
 const config: Config = {
@@ -71,15 +73,21 @@ const config: Config = {
                     sidebarPath: "./sidebars.ts",
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/kiriminaja/docs/",
-                },
-                blog: {
-                    showReadingTime: true,
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/kiriminaja/docs/",
+                    editUrl: "https://github.com/kiriminaja/",
+                    beforeDefaultRehypePlugins: [
+                        [
+                            rehypeShiki,
+                            {
+                                themes: {
+                                    dark: 'material-theme-darker',
+                                    light: 'material-theme-darker'
+                                },
+                                langs: ["js", "ts", "jsx", "tsx", "json", "bash" /* other languages */],
+                                // alternatively, you can activate all bundled languages:
+                                // langs: Object.keys(bundledLanguages) as BundledLanguage[]
+                            } satisfies RehypeShikiOptions,
+                        ],
+                    ],
                 },
                 theme: {
                     customCss: "./src/css/custom.css",
@@ -121,11 +129,7 @@ const config: Config = {
         },
         footer: {
             copyright: `Copyright © ${new Date().getFullYear()} PT Selalu Siap Solusi.`,
-        },
-        prism: {
-            theme: prismThemes.duotoneLight,
-            darkTheme: prismThemes.dracula,
-        },
+        }
     } satisfies Preset.ThemeConfig,
 };
 

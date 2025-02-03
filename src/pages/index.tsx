@@ -12,16 +12,20 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero", styles.heroBanner)}>
       <div className="container xl:w-6/12">
-        <Heading as="h1" className="hero__title text--primary">
+        <Heading as="h1" className="text-xl lg:text-4xl font-bold text--primary">
           #BantuMenujuLebihMaju
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <p className="text-lg">{siteConfig.tagline}</p>
+        <div className="gap-3 grid lg:grid-cols-2 lg:w-2/4 mx-auto justify-center">
+          <Link className="button button--primary button--lg" to="/docs">
+            Read Docs
+          </Link>
           <Link
-            className="button button--primary button--lg"
-            to="/docs"
+            className="button button--secondary button--lg"
+            to="https://sandbox.kiriminaja.com"
+            target="blank"
           >
-            Get Started
+            Sandbox Panel
           </Link>
         </div>
       </div>
