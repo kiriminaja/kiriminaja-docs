@@ -1,9 +1,9 @@
-name: Update Submodule in Main Repo
+name: Submodule Sync
 
 on:
   push:
     branches:
-      - subm  # Change to the branch where you want updates to trigger
+      - sa/test  # Change to the branch where you want updates to trigger
 
 jobs:
   update-submodule:
@@ -19,7 +19,7 @@ jobs:
 
       - name: Clone the main repository
         run: |
-          git clone --recurse-submodules https://github.com/kiriminaja/main-repo.git main-repo
+          git clone --recurse-submodules ${{ secrets.SUBMODULE_PARENT }} main-repo
           cd main-repo
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
