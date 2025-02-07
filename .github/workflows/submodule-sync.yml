@@ -3,7 +3,8 @@ name: Submodule Sync
 on:
   push:
     branches:
-      - sa/test  # Change to the branch where you want updates to trigger
+      - subm
+      - main
 
 permissions:
   contents: write  # Ensure actions can push commits
