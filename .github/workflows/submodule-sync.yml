@@ -5,6 +5,9 @@ on:
     branches:
       - sa/test  # Change to the branch where you want updates to trigger
 
+permissions:
+  contents: write  # Ensure actions can push commits
+
 jobs:
   update-submodule:
     runs-on: ubuntu-latest
