@@ -1,9 +1,13 @@
-name: Update Submodule in Main Repo
+name: Submodule Sync
 
 on:
   push:
     branches:
-      - subm  # Change to the branch where you want updates to trigger
+      - subm
+      - main
+
+permissions:
+  contents: write  # Ensure actions can push commits
 
 jobs:
   update-submodule:
@@ -18,16 +22,19 @@ jobs:
         run: echo "SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
       - name: Clone the main repository
+        id: clone_repo
         run: |
-          git clone --recurse-submodules https://github.com/kiriminaja/main-repo.git main-repo
+          git clone --recurse-submodules https://x-access-token:${{ secrets.SUBMODULE_TOKEN }}@github.com/kiriminaja/kaj-sandbox-web.git main-repo
           cd main-repo
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "yanuaraditia"
+          git config user.email "yanuaraditia@outlook.com"
 
       - name: Update submodule reference
+        id: push_repo
         run: |
           cd main-repo
-          git submodule update --remote content
+          git submodule update --force --remote --recursive
           git add content
           git commit -m "Update submodule to latest commit: ${{ env.SHA }}" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.SUBMODULE_TOKEN }}@github.com/kiriminaja/main-repo.git HEAD:main
+          git remote set-url origin https://x-access-token:${{ secrets.SUBMODULE_TOKEN }}@github.com/kiriminaja/kaj-sandbox-web.git
+          git push origin main
