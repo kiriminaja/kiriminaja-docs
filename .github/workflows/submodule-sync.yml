@@ -33,4 +33,4 @@ jobs:
           git add content
           git commit -m "Update submodule to latest commit: ${{ env.SHA }}" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${{ secrets.SUBMODULE_TOKEN }}@github.com/kiriminaja/kaj-sandbox-web.git
-          git push origin HEAD:main
+          git push origin main
