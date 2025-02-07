@@ -19,7 +19,7 @@ jobs:
 
       - name: Clone the main repository
         run: |
-          git clone --recurse-submodules https://github.com/kiriminaja/kaj-sandbox-web.git main-repo
+          git clone --recurse-submodules git@github.com:kiriminaja/kaj-sandbox-web.git main-repo
           cd main-repo
           git config user.name "yanuaraditia"
           git config user.email "yanuaraditia@outlook.com"
