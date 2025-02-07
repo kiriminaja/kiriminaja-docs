@@ -22,8 +22,8 @@ jobs:
         run: |
           git clone --recurse-submodules https://x-access-token:${{ secrets.SUBMODULE_TOKEN }}@github.com/kiriminaja/kaj-sandbox-web.git main-repo
           cd main-repo
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "yanuaraditia"
+          git config user.email "yanuaraditia@outlook.com"
 
       - name: Update submodule reference
         id: push_repo
